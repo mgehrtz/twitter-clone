@@ -3,6 +3,10 @@ import ReactDOM from "react-dom/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFeatherPointed } from "@fortawesome/free-solid-svg-icons";
 
+// Styles
+import './home.scss';
+
+
 const HomeLayout = () => {
 
     return (

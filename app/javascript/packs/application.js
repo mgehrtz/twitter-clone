@@ -7,5 +7,7 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import 'normalize-css'
+
 Rails.start()
 ActiveStorage.start()
