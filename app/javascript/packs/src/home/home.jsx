@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFeatherPointed } from "@fortawesome/free-solid-svg-icons";
 
-const App = () => {
+const HomeLayout = () => {
 
     return (
         <>
@@ -17,5 +17,5 @@ const App = () => {
 // Render
 document.addEventListener('DOMContentLoaded', () => {
     const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
+    root.render(<HomeLayout />);
 });
