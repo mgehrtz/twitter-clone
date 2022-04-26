@@ -25,46 +25,70 @@
             background-color: #eee;
         }
     }
-    .side-bar {
-        position: fixed;
-        left: 0;
+    .main-wrapper {
+        position: absolute;
+        height: calc(100vh - 100px);
+        width: 100vw;
         top: 100px;
-        height: calc(100% - 100px);
-        width: 20%;
-        background-color: #fff;
-        padding: 1rem;
+        display: flex;
+    
+        .side-bar {
+            width: 20%;
+            background-color: #fff;
+            padding: 1rem;
 
-        .photo-circle {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background-color: $blue;
-            position: relative;
-            top: -70px;
-            right: -100px;
+            .photo-circle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                background-color: $blue;
+                position: relative;
+                top: -70px;
+                right: -100px;
 
-            svg {
-                width: 100%;
-                height: auto;
-                padding: 20%;
+                svg {
+                    width: 100%;
+                    height: auto;
+                    padding: 20%;
 
-                path {
-                    color: #05214d;
+                    path {
+                        color: #05214d;
+                    }
+                }
+            }
+
+            #new-post-form {
+                margin-top: -70px;
+                display: flex;
+                flex-direction: column;
+
+                h4 {
+                    margin-bottom: 0.5rem;
+                    font-weight: 300;
+                }
+                
+                textarea {
+                    resize: none;
+                    height: 150px;
+                    background-color: #eee;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    padding: 10px;
+                    font-size: 1rem;
+                }
+
+                .btn {
+                    margin-top: 1rem;
                 }
             }
         }
 
-        #new-post-form {
-            margin-top: -70px;
-            display: flex;
-            flex-direction: column;
-
-            .btn {
-                margin-top: 1rem;
-            }
+        .content-area {
+            width: 80%;
+            height: 100%;
         }
     }
 }

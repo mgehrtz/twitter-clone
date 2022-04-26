@@ -1,0 +1,37 @@
+@import '../general.scss';
+
+.posts-wrapper {
+    height: calc(100% - 2rem);
+    padding: 1rem 70px;
+    overflow-y: scroll;
+
+    .post {
+        position: relative;
+        background-color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        margin: 1rem auto;
+        max-width: 800px;
+
+        .meta-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .btn.delete {
+                background: transparent;
+                font-size: 0.8rem;
+                font-weight: 300;
+                padding: 0;
+                color: #850000;
+            }
+
+            .username {
+                color: #aaa;
+                text-decoration: underline;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

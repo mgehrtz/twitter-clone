@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 
 // Components
 import NewPostForm from './newPostForm';
+import Posts from './posts';
 
 // Styles
 import './styles.scss';
@@ -14,7 +15,7 @@ import { faFeatherPointed } from "@fortawesome/free-solid-svg-icons";
 
 
 // Main app
-const FeedLayout = (props) => {
+const FeedLayout = () => {
 
     return (
         <>
@@ -22,13 +23,17 @@ const FeedLayout = (props) => {
                 <h3 className="username">@michaelgehrtz</h3>
                 <button className='btn'>Log Out</button>
             </div>
-            <div className="side-bar">
-                <div className="photo-circle">
-                    <FontAwesomeIcon icon={ faFeatherPointed } />
+            <div className="main-wrapper">
+                <div className="side-bar">
+                    <div className="photo-circle">
+                        <FontAwesomeIcon icon={ faFeatherPointed } />
+                    </div>
+                    <NewPostForm />
                 </div>
-                <NewPostForm />
+                <div className='content-area'>
+                    <Posts />
+                </div>
             </div>
-            <div className='content-area'></div>
         </>
     );
 
