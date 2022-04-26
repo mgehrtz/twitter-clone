@@ -1,18 +1,32 @@
+// React imports
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFeatherPointed } from "@fortawesome/free-solid-svg-icons";
+
+// Components
+import LoginForm from './login';
+import SignupForm from './signup';
 
 // Styles
 import './home.scss';
+
+// Icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFeatherPointed } from "@fortawesome/free-solid-svg-icons";
 
 
 const HomeLayout = () => {
 
     return (
         <>
-            <h1>Hello World!</h1>
-            <FontAwesomeIcon icon={ faFeatherPointed } />
+            <LoginForm />
+            <div className="col-wrapper">
+                <div className="left col">
+                    <FontAwesomeIcon icon={ faFeatherPointed } />
+                </div>
+                <div className="right col">
+                    <SignupForm />
+                </div>
+            </div>
         </>
     );
 
@@ -20,6 +34,6 @@ const HomeLayout = () => {
 
 // Render
 document.addEventListener('DOMContentLoaded', () => {
-    const root = ReactDOM.createRoot(document.getElementById('root'));
+    const root = ReactDOM.createRoot(document.getElementById('app'));
     root.render(<HomeLayout />);
 });
