@@ -1,27 +1,5 @@
-/* Variables */
-
-$blue: rgb(8,52,119);
-$blue-radial-gradient: radial-gradient(circle, rgba(8,52,119,1) 0%, rgba(8,40,89,1) 100%);
-
-
-/* Helpers */
-
-.btn {
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1;
-    background-color: #f7f7f7;
-    color: $blue;
-    transition: 150ms ease;
-}
-.btn.dark {
-    background-color: $blue;
-    color: #f7f7f7;
-}
-
+/* Import Variables */
+@import '../general.scss';
 
 #app {
     min-height: 100vh;

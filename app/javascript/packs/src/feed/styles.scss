@@ -1,0 +1,70 @@
+/* Import General */
+@import '../general.scss';
+
+#app {
+    min-height: 100vh;
+    background-color: #f1f1f1;
+
+    h3 {
+        margin: 0;
+    }
+
+    .top-bar {
+        position: fixed;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: calc(100% - 4rem);
+        height: 100px;
+        background-color: #fff;
+        padding: 0 2rem;
+
+        .btn {
+            margin-left: 1rem;
+            background-color: #eee;
+        }
+    }
+    .side-bar {
+        position: fixed;
+        left: 0;
+        top: 100px;
+        height: calc(100% - 100px);
+        width: 20%;
+        background-color: #fff;
+        padding: 1rem;
+
+        .photo-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: $blue;
+            position: relative;
+            top: -70px;
+            right: -100px;
+
+            svg {
+                width: 100%;
+                height: auto;
+                padding: 20%;
+
+                path {
+                    color: #05214d;
+                }
+            }
+        }
+
+        #new-post-form {
+            margin-top: -70px;
+            display: flex;
+            flex-direction: column;
+
+            .btn {
+                margin-top: 1rem;
+            }
+        }
+    }
+}
