@@ -12,15 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2022_04_26_205247) do
 
-  create_table "posts_tables", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["id"], name: "index_posts_tables_on_id"
+    t.index ["id"], name: "index_posts_on_id"
   end
 
-  create_table "users_tables", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_04_26_205247) do
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["id"], name: "index_users_tables_on_id"
+    t.index ["id"], name: "index_users_on_id"
   end
 
 end

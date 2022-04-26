@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/feed' => 'static_pages#index'
 
   namespace :api do
-
+    get '/posts' => 'post#index'
+    get '/:username/posts' => 'post#index_by_user'
   end
 
 end
