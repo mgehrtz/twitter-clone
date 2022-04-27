@@ -2,7 +2,7 @@ class Api::SessionController < ApplicationController
     def create
         @user = User.find_by(username: params[:user][:username])
 
-        if @user and @user.password == params[:user][:password]
+        if @user and BCrypt::Password.new(@user.password) == params[:user][:password]
             session = @user.sessions.create
             cookies.permanent.signed[:twitter_clone_session_token] = {
                 value: session.token,
