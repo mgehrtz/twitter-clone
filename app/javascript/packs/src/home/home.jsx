@@ -6,6 +6,9 @@ import ReactDOM from "react-dom/client";
 import LoginForm from './login';
 import SignupForm from './signup';
 
+// Requests
+import '../requests';
+
 // Styles
 import './home.scss';
 

@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
                     this.setState({ form_is_visible: false });
                 }
             }
-        })
+        });
     }
 
     toggleView() {

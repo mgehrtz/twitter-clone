@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     # Posts
     get '/posts' => 'post#index'
     get '/:username/posts' => 'post#index_by_user'
+    post '/posts' => 'post#create'
+    delete '/posts/:id' => 'post#destroy'
 
     # User
     post '/users' => 'user#create'
