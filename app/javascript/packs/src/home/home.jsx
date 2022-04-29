@@ -16,7 +16,6 @@ import './home.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFeatherPointed } from "@fortawesome/free-solid-svg-icons";
 
-
 const HomeLayout = () => {
 
     return (

@@ -13,6 +13,9 @@ import './styles.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFeatherPointed } from "@fortawesome/free-solid-svg-icons";
 
+// Requests
+import { logout } from '../requests';
+
 
 // Main app
 const FeedLayout = () => {
@@ -21,7 +24,7 @@ const FeedLayout = () => {
         <>
             <div className='top-bar'>
                 <h3 className="username">@michaelgehrtz</h3>
-                <button className='btn'>Log Out</button>
+                <button className='btn' onClick={ logout } >Log Out</button>
             </div>
             <div className="main-wrapper">
                 <div className="side-bar">
