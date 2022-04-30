@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { deletePost } from '../requests';
+import swal from 'sweetalert';
 import './posts.scss';
 
 
@@ -16,16 +17,27 @@ function Posts(props) {
 
     // Handle delete
     function handleClick(event) {
-        const postID = event.target.closest('.post').dataset.id;
+        swal({
+            title: "Are you sure?",
+            text: "This can't be undone.",
+            icon: "warning",
+            buttons: {
+                cancel: "Cancel",
+                delete: "Yes, delete."
+            }
+        }).then((resp) => {
+            if (resp == 'delete') {
+                const postID = event.target.closest('.post').dataset.id;
         
-        // Delete from database
-        deletePost(postID, function(response) {
-            // If successful delete
-            if (response.success) {
-                updatePosts(posts.filter(post => post.id != postID));
+                // Delete from database
+                deletePost(postID, function(response) {
+                    // If successful delete
+                    if (response.success) {
+                        updatePosts(posts.filter(post => post.id != postID));
+                    }
+                });
             }
         });
-    
     }
 
 

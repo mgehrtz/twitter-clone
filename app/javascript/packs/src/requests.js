@@ -53,6 +53,8 @@ export function login(username, password) {
         success: function(response) {
             if (response.success) {
                 location.href = '/feed';
+            } else {
+                window.alert('Login failed. Please try again.');
             }
         },
         error: function(err) {

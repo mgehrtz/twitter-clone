@@ -1,4 +1,5 @@
 import React from "react";
+import { login } from "../requests";
 import './login.scss';
 
 class LoginForm extends React.Component {
@@ -41,7 +42,7 @@ class LoginForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.state);
+        login(this.state.username, this.state.password);
     }
 
     render() {
