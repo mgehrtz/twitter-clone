@@ -10,9 +10,9 @@ class StaticPagesController < ApplicationController
 
   def index
     token = cookies.permanent.signed[:twitter_clone_session_token]
-    session = Session.find_by(token: token)
+    @session = Session.find_by(token: token)
 
-    if session
+    if @session
       render 'feed'
     else
       redirect_to '/'

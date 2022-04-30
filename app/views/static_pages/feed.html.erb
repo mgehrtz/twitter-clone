@@ -3,4 +3,4 @@
     <%= javascript_pack_tag 'src/feed/index' %>
 <% end %>
 
-<div id='app'></div>
+<div data-username="<%= @session.user.username %>" id='app'></div>

@@ -10,7 +10,7 @@ $.ajaxSetup({
 });
 
 
-// Singup
+// Signup
 export function signup(first_name, last_name, username, email, password) {
 
     $.ajax({
@@ -63,6 +63,21 @@ export function login(username, password) {
 
 }
 
+// Authenticate user
+export function authenticate(callback) {
+    $.ajax({
+        type: 'GET',
+        url: '/api/auth',
+        success: function(response) {
+            callback(response);
+        },
+        error: function(err) {
+            window.alert('Something went wrong. Please check console.');
+            console.error(err.responseText);
+        }
+    });
+}
+
 // Logout
 export function logout() {
 
@@ -81,3 +96,57 @@ export function logout() {
     });
 
 }
+
+// Create post
+export function newPost(content, callback) {
+
+    $.ajax({
+        type: 'POST',
+        url: '/api/posts',
+        data: {
+            post: {
+                content: content
+            }
+        },
+        success: function(response) {
+            return callback(response);
+        },
+        error: function(error) {
+            window.alert(error);
+        }
+    });
+
+}
+
+// Retrieve posts (all or by username)
+export function getPosts(username, callback) {
+    const url = (username) ? `/api/${username}/posts` : '/api/posts';
+
+    $.ajax({
+        type: 'GET',
+        url: url,
+        success: function(response) {
+            callback(response)
+        },
+        error: function(err) {
+            window.alert('Something went wrong. Please check the console for more information.');
+            console.error(err.responseText);
+        }
+    });
+}
+
+// Delete post
+export function deletePost(postID, callback) {
+    $.ajax({
+        type: 'DELETE',
+        url: `/api/posts/${postID}`,
+        success: function(response) {
+            callback(response);
+        },
+        error: function(err) {
+            window.alert('Something went wrong. Check the console.');
+            console.error(err.responseText);
+        }
+    });
+}
+

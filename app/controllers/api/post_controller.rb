@@ -3,15 +3,31 @@ class Api::PostController < ApplicationController
     # Show all posts
     def index
         @posts = Post.all
+
+        if @posts
+            render 'index'
+        else
+            render json: {
+                success: false,
+                message: "No posts found."
+            }
+        end
     end
 
     # Show a user's posts
     def index_by_user
         user = User.find_by(username: params[:username])
 
-        @posts = Post.where(user_id: user.id)
+        if user
+            @posts = Post.where(user_id: user.id)
 
-        render 'index'
+            render 'index'
+        else
+            render json: {
+                success: false,
+                message: "No user found by the username #{params[:username]}."
+            }
+        end
     end
 
     # Create a new post
@@ -20,11 +36,10 @@ class Api::PostController < ApplicationController
         session = Session.find_by(token: token)
         
         permitted = post_params
-        user = User.find_by(username: permitted[:username])
 
-        post = Post.new(content: permitted[:content], user_id: user.id)
+        post = Post.new(content: permitted[:content], user_id: session.user.id)
 
-        if post.user_id == session.user.id && post.save
+        if session.user.id && post.save
             render json: {
                 success: true,
                 post: {
@@ -65,6 +80,6 @@ class Api::PostController < ApplicationController
 
     private
         def post_params
-            params.require(:post).permit(:content, :username)
+            params.require(:post).permit(:content)
         end
 end

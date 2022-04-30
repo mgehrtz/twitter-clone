@@ -29,7 +29,7 @@ class Api::SessionController < ApplicationController
 
             render json: {
                 authenticated: true,
-                username: user.username,
+                username: '@' + user.username,
                 id: user.id
             }
 
