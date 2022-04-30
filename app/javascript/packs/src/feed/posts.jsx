@@ -27,15 +27,18 @@ function Posts(props) {
             }
         }).then((resp) => {
             if (resp == 'delete') {
+                event.target.closest('.post').classList.add('deleting');
                 const postID = event.target.closest('.post').dataset.id;
         
                 // Delete from database
-                deletePost(postID, function(response) {
-                    // If successful delete
-                    if (response.success) {
-                        updatePosts(posts.filter(post => post.id != postID));
-                    }
-                });
+                setTimeout(function() {
+                    deletePost(postID, function(response) {
+                        // If successful delete
+                        if (response.success) {
+                            updatePosts(posts.filter(post => post.id != postID));
+                        }
+                    });
+                }, 700);
             }
         });
     }

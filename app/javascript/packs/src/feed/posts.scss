@@ -13,6 +13,8 @@
         border: 1px solid #ddd;
         margin: 1rem auto;
         max-width: 800px;
+        opacity: 1;
+        transition: 500ms ease;
 
         .meta-wrapper {
             display: flex;
@@ -34,5 +36,8 @@
                 margin-left: auto;
             }
         }
+    }
+    .post.deleting {
+        opacity: 0;
     }
 }
