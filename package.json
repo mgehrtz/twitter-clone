@@ -1,6 +1,9 @@
 {
   "name": "twitter-clone",
   "private": true,
+  "engines": {
+    "node": "~16.14"
+  },
   "dependencies": {
     "@babel/preset-react": "^7.16.7",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
