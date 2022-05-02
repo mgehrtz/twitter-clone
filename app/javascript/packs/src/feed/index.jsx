@@ -8,7 +8,6 @@ import Posts from './posts';
 
 // Styles
 import './styles.scss';
-import './posts.scss';
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
