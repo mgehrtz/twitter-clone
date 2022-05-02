@@ -23,6 +23,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Postgres for production
 gem 'pg'
 
+# Mailer gems
+gem 'net-smtp' # to send email
+gem 'net-imap' # for rspec
+gem 'net-pop'  # for rspec
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
