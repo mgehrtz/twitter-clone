@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { deletePost } from '../requests';
 import swal from 'sweetalert';
-import './posts.scss';
+
 
 
 function Posts(props) {
