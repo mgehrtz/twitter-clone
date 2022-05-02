@@ -5,6 +5,11 @@
     padding: 1rem 70px;
     overflow-y: scroll;
 
+    h2 {
+        max-width: calc(800px + 3rem);
+        margin: 2rem auto;
+    }
+
     .post {
         position: relative;
         background-color: #fff;
