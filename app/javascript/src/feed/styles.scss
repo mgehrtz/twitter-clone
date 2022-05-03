@@ -25,6 +25,26 @@
             margin-left: 1rem;
             background-color: #eee;
         }
+
+        .back-to-feed {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            background: transparent;
+            transition: 200ms ease;
+            padding: 0.75rem 0.75rem;
+            margin-right: 0.5rem;
+
+            svg {
+                font-size: 18px;
+                margin-right: 1rem;
+            }
+        }
+        .back-to-feed:hover {
+            background: #eee
+        }
+
     }
     .main-wrapper {
         position: absolute;
@@ -42,13 +62,12 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 300px;
-                height: 300px;
+                padding: 1rem;
+                margin: 1rem;
                 border-radius: 50%;
-                background-color: $blue;
+                background-color: rgb(8, 52, 119);
                 position: relative;
-                top: -70px;
-                right: -100px;
+                top: -75px;
 
                 svg {
                     width: 100%;

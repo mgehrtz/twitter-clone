@@ -11,7 +11,7 @@ import './styles.scss';
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFeatherPointed } from "@fortawesome/free-solid-svg-icons";
+import { faFeatherPointed, faCaretLeft } from "@fortawesome/free-solid-svg-icons";
 
 // Requests
 import { authenticate, logout, getPosts } from '../requests';
@@ -57,10 +57,17 @@ const FeedLayout = () => {
 
     }, []);
 
+    const isViewingFeed = (window.location.pathname == '/feed') ? true : false;
+
     return (
         <>
             <div className='top-bar'>
-                <h3 className="username"><a href='/feed'>{ username }</a></h3>
+                { isViewingFeed ||
+                <a className='back-to-feed btn' href='/feed'>
+                    <FontAwesomeIcon icon={ faCaretLeft } />
+                    All Posts
+                </a> }
+                <h3 className="username">{ username }</h3>
                 <button className='btn' onClick={ logout } >Log Out</button>
             </div>
             <div className="main-wrapper">
